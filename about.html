@@ -3,47 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            text-align: center;
-        }
-        .container {
-            max-width: 800px;
-            margin: 50px auto;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            color: #333;
-        }
-        p {
-            font-size: 18px;
-            line-height: 1.6;
-            color: #555;
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>About </title>
+    <link rel="icon" type="image/png" href="./Geetha/logo.png">
 </head>
 <body>
-
-    <div class="container">
-        <h1>About Me</h1>
-        <p>Welcome! I'm passionate about creativity, sustainability, and turning everyday materials into beautiful works of art. 
-        I love exploring innovative ways to repurpose plastic, old flower pots, and other discarded items into stunning decorative pieces.</p>
-        
-        <p>Through my work, I aim to inspire others to see the hidden potential in waste and embrace eco-friendly artistic practices. 
-        On this website, I share my creative journey, DIY tutorials, and unique art projects, helping you bring beauty and sustainability into your own space.</p>
-        
-        <p>Join me in making art that not only looks good but also does good for our planet.</p>
-
-        <p><strong>Thank you for visiting and supporting my vision!</strong></p>
+    <nav>
+        <div class="nav-container">
+            <div class="logo" data-aos="zoom-in" data-aos-duration="1500" style="margin-left: 0px; margin-top: 50px; font-size: 50px; margin-right: 50px;">
+                Global  <span> Knowledge</span>
+            </div>
+            <div class="links">
+          
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500"><a href="#" style="
+                    right: 200px;
+                    top: 40px;
+                ">Contact Me</a></div>
+        </div>
+        <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
     </div>
-
+        <div class="dropdown">
+            <div class="links">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Skills</a>
+                <a href="#">Service</a>
+                <a href="#">Contact Me</a>
+                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+            </div>
+        </div>
+    </nav>
+    <section>
+        <div class="main-container">
+            <div class="image" data-aos="zoom-out" data-aos-duration="3000" style="width: 600px; height: 600px;">
+                <img src="./Geetha/logo.png" alt="" >
+            </div>
+            <div class="content">
+                <h1 data-aos="fade-left" data-aos-duration="1500" data-aos-delay="700">Hey I'm <span>Manoj G K</span></h1>
+                <div class="typewriter" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="900">I'm a <span class="typewriter-text"></span><label for="">|</label></div>
+                <p data-aos="flip-down" data-aos-duration="1500" data-aos-delay="1100">Welcome! I'm passionate about creativity, sustainability, and turning everyday materials into beautiful works of art. I love exploring innovative ways to repurpose plastic, old flower pots, and other discarded items into stunning decorative pieces. Through my work, I aim to inspire others to see the hidden potential in waste and embrace eco-friendly artistic practices.</p>
+                <p data-aos="flip-down" data-aos-duration="1500" data-aos-delay="1100">  Thank you for visiting and supporting my vision! </p>
+                <div class="social-links">
+                    <a href="https://github.com/Manojgk-2002" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1300"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61552069886822" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1400"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.linkedin.com/in/manoj-gk-3a4878264/" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1500"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/globalknowledge4/" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1600">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    
+                </div>
+                <div class="btn" data-aos="zoom-in" data-aos-duration="1500" data-aos-delay="1800">
+                    <a href="https://www.youtube.com/@G_Global-K_Knowledge." target="_blank">
+                        <button>YouTube Channel</button>
+                    </a>
+                </div>                
+            </div>
+        </div>
+    </section>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({offset:0});
+    </script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
