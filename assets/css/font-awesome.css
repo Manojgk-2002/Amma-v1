@@ -2335,3 +2335,16 @@
   overflow: visible;
   clip: auto;
 }
+
+.main-container .image {
+  width: 500px;
+  height: 500px;
+  border-radius: 100%;
+  overflow: hidden;
+  box-shadow: 0 0 50px #077b32;
+  transition: transform 0.3s ease-in-out; /* Smooth transition for zoom effect */
+}
+
+.main-container .image:hover {
+  transform: scale(1.1); /* Zoom in by 10% */
+}

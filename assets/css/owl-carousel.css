@@ -184,3 +184,17 @@
   z-index: 1;
   height: 100%;
   width: 100%; }
+  @keyframes zoom-out {
+    0% {
+        transform: scale(1.5); /* Start zoomed in */
+        opacity: 0; /* Start invisible */
+    }
+    100% {
+        transform: scale(1); /* End at normal size */
+        opacity: 1; /* End fully visible */
+    }
+}
+
+.image[data-aos="zoom-out"] {
+    animation: zoom-out 3s ease-out; /* Apply the animation */
+}

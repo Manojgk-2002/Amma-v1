@@ -186,3 +186,13 @@
 
 
 })(window.jQuery);
+
+$(document).ready(function () {
+    $(".about-link").on("click", function () {
+        var width = $(window).width();
+        if (width < 991) {
+            $(".menu-trigger").removeClass("active");
+            $(".header-area .nav").slideUp(200);
+        }
+    });
+});

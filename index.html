@@ -23,6 +23,11 @@
     <link rel="stylesheet" href="assets/css/owl-carousel.css">
 
     <link rel="stylesheet" href="assets/css/lightbox.css">
+    <!-- AOS CSS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <!--
 
 TemplateMo 571 Hexashop
@@ -63,8 +68,10 @@ https://templatemo.com/tm-571-hexashop
                             <li class="scroll-to-section"><a href="#men">Vase Transformations</a></li>
                             <li class="scroll-to-section"><a href="#men">Creative Flowers</a></li>
                             <li class="scroll-to-section"><a href="#men">Upcycle Ideas</a></li>
-                            <li class="scroll-to-section"><a rel="nofollow" href="./about.html" target="_blank">About Us</a></li>
-                           
+                            <li class="scroll-to-section">
+                                <a href="about.html" class="about-link">About Us</a>
+                            </li>
+                                                       
                           
                         </ul>        
                         <a class='menu-trigger'>
@@ -910,7 +917,13 @@ https://templatemo.com/tm-571-hexashop
                         <br>Art By: <a href="https://www.youtube.com/@G_Global-K_Knowledge." target="_parent" title="free css templates">Geetha B</a>
                         <br>Design: <a href="https://www.youtube.com/@G_Global-K_Knowledge." target="_parent" title="free css templates">Manoj G K</a>
                     </p>
-                    <img src="./Geetha/byclile.png" alt="" style="width: 200px; margin-left: 0px;">
+                    <div class="image" data-aos="zoom-out" data-aos-duration="3000">
+                        <img src="./Geetha/byclile.png" alt="" style="width: 200px; margin-left: 0px;">
+
+                    </div>
+                    <div class="image" data-aos="zoom-out" data-aos-duration="3000">
+                        <img src="your-image.jpg" alt="Your Image">
+                    </div>
                         <ul>
                             <li><a href="https://www.instagram.com/globalknowledge4/"><i class="fa fa-instagram"></i></a></li>
                             <a rel="nofollow" href="./payment.html" target="_blank">support us</a>
@@ -963,7 +976,7 @@ https://templatemo.com/tm-571-hexashop
                 
             });
         });
-
+  AOS.init();
     </script>
 
   </body>
