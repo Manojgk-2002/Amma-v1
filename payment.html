@@ -4,73 +4,141 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Support</title>
-        
     <link rel="icon" type="image/png" href="./Geetha/logo.png">
     <style>
         /* General Styles */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
             animation: fadeIn 1.5s ease-in-out;
+            overflow: hidden;
         }
 
         /* Container Animation */
         .container {
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.9);
             padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
             text-align: center;
             max-width: 400px;
             width: 100%;
             transform: scale(0.9);
             animation: popUp 0.8s ease-in-out forwards;
+            backdrop-filter: blur(10px);
         }
 
         /* QR Code Animation */
         .qr-code {
             margin: 30px 0;
             transition: transform 0.3s ease-in-out;
+            perspective: 1000px;
         }
 
         .qr-code img {
             width: 100%;
             max-width: 300px;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+            transition: transform 0.3s ease-in-out, box-shadow 0.5s ease-in-out;
         }
 
         /* Hover Effect on QR Code */
-        .qr-code:hover {
-            transform: scale(1.05);
+        .qr-code:hover img {
+            transform: scale(1.25) rotateY(180deg);
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.4);
         }
 
         /* Button Styles */
         .button {
-            background-color: #4CAF50;
+            background: linear-gradient(135deg, #4CAF50, #45a049);
             color: white;
             padding: 15px 30px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
-            transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+            transition: background 0.3s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
             animation: pulse 2s infinite;
+            position: relative;
+            overflow: hidden;
         }
 
         .button:hover {
-            background-color: #45a049;
-            transform: scale(1.1);
+            background: linear-gradient(135deg, #45a049, #4CAF50);
+            transform: scale(1.05) rotateY(180deg);
+            box-shadow: 0 0 20px rgba(76, 175, 80, 0.6);
         }
 
         .button:active {
             transform: scale(0.95);
         }
+
+        .button::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: radial-gradient(circle, rgba(208, 183, 183, 0.4), rgba(255, 255, 255, 0) 70%);
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .button:hover::after {
+            transform: translate(-50%, -50%) scale(1);
+        }
+        .content button {
+    width: 50%;
+    height: 6vh;
+    margin: 30px;
+    background-color: #077b32;
+    color: white;
+    border: none;
+    outline: none;
+    font-size: 120%;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: transform 0.6s, background 0.2s linear;
+    position: relative;
+    perspective: 1000px;
+}
+
+.content button::after {
+    content: "DOT Pay";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #45a049, #4CAF50);
+    border-radius: 5px;
+    color: white;
+    font-weight: 700;
+    transform: rotateY(180deg);
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.6s;
+}
+
+.content button:hover {
+    background: linear-gradient(135deg, #45a049, #4CAF50);
+    transform: scale(1.05) rotateY(180deg);
+    box-shadow: 0 0 20px rgba(76, 175, 80, 0.6);
+}
+
+.content button:hover::after {
+    opacity: 1;
+    transform: rotateY(0deg);
+}
 
         /* Animations */
         @keyframes fadeIn {
@@ -87,6 +155,30 @@
             0% { box-shadow: 0 0 10px rgba(76, 175, 80, 0.3); }
             50% { box-shadow: 0 0 20px rgba(76, 175, 80, 0.6); }
             100% { box-shadow: 0 0 10px rgba(76, 175, 80, 0.3); }
+        }
+
+        /* Confetti Animation */
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #ff0;
+            border-radius: 50%;
+            animation: confetti 2s ease-out;
+        }
+
+        @keyframes confetti {
+            0% { transform: translateY(0) rotate(0); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+        }
+
+        /* Custom Cursor */
+        body {
+            cursor: url('default.cur'), auto;
+        }
+
+        .button, .qr-code {
+            cursor: url('pointer.cur'), pointer;
         }
 
         /* Responsive Design */
@@ -116,22 +208,38 @@
         document.getElementById("payButton").addEventListener("click", function() {
             let button = this;
             button.innerText = "Processing...";
-            button.style.backgroundColor = "#ffa500"; // Change color to orange
-            button.style.transform = "scale(0.95)";
+            button.style.background = "linear-gradient(135deg, #ffa500, #ff8c00)";
+            button.style.transform = "scale(0.9)";
 
             setTimeout(() => {
                 button.innerText = "Redirecting...";
-                button.style.backgroundColor = "#007bff"; // Change color to blue
+                button.style.background = "linear-gradient(135deg, #007bff, #0056b3)";
             }, 2000);
 
             setTimeout(() => {
                 button.innerText = "Pay Now";
-                button.style.backgroundColor = "#4CAF50"; // Reset color
+                button.style.background = "linear-gradient(135deg, #4CAF50, #45a049)";
                 button.style.transform = "scale(1)";
                 // Simulate redirect (you can replace with actual payment gateway)
-                alert("Redirecting to Payment Gateway...");
+                alert("Thank's for your Payment");
+                createConfetti();
             }, 4000);
         });
+
+        // Confetti Animation
+        function createConfetti() {
+    const confettiCount = 1000;
+    for (let i = 0; i < confettiCount; i++) {
+        const confetti = document.createElement("div");
+        confetti.classList.add("confetti");
+        confetti.style.left = `${Math.random() * 100}vw`; // Random horizontal position
+        confetti.style.top = `-10px`; // Start from just above the top of the page
+        confetti.style.animationDelay = `${Math.random() * 2}s`;
+        confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+        document.body.appendChild(confetti);
+        setTimeout(() => confetti.remove(), 8000); // Remove confetti after animation
+    }
+}
     </script>
 
 </body>

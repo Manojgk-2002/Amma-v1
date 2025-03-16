@@ -161,7 +161,9 @@ section {
 }
 
 .content h1 {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
+    margin-top: 20px;
+
 }
 
 .content h1 span {
@@ -239,11 +241,16 @@ section {
         margin-top: 50px;
         margin-left: 50px;
         margin-right: 50px;
+        margin-left: 0px;
+        margin-right: 0px;
+        left: 25px;
+    
 
     }
 
     .nav-container .links {
         display: none;
+        
     }
 
     .hamburg,
@@ -287,5 +294,33 @@ section {
     .content button {
         width: 80%;
         margin-top: 15px;
+    }
+}
+@media (max-width: 375px) {
+    .main-container .image {
+        width: 220px;
+        height: 220px;
+    }
+
+    .main-container .content h1 {
+        font-size: 2rem;
+    }
+
+    .main-container .content .typewriter {
+        font-size: 1.0rem;
+    }
+
+    .content button {
+        width: 70%;
+        font-size: 1rem;
+    }
+
+    .social-links i {
+        width: 2rem;
+        height: 2rem;
+        font-size: 1rem;
+    }
+    .content h1 {
+        font-size: 2.0rem;
     }
 }
